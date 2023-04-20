@@ -41,7 +41,7 @@ def read_csv(filename: str):
 def read_csv(filename: str):
 	data = []
 	fields = ["Фамилия","Имя","Телефон","Описание"]
-	with open(filename, 'r', encoding = 'utf - 8') as fin:
+	with open(filename, 'r', encoding = 'utf-8') as fin:
 		for line in fin:
 			record = dict(zip(fields, line.strip().split(',')))
 			data.append(record)
@@ -140,7 +140,7 @@ def save_spravochnik(data):
 	print("Справочник сохранен")
 	input('Для продолжения нажмите клавишу Enter')
 
-spravochnik = read_csv("phonebook.csv")
+spravochnik = read_csv('phonebook.csv')
 
 choise = 0
 while choise != 6:
