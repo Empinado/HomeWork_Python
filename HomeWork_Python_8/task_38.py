@@ -100,14 +100,25 @@ def find_abonent_family(data):
 		input('Для продолжения нажмите клавишу Enter')
 
 def find_abonent_number(data):
-	number = input("Введите телефон абонента: ")
+	"""number = input("Введите телефон абонента: ")
 	count = 0
 	for el in data:
 		if el['Телефон'] == number: 
 			count += 1
 			for k, v in el.items():
 				print(f'{k}: {v}')
-			print()
+			print()"""
+	number = input("Введите номер абонента: ")
+	count = 0
+	find_abonent = []
+	for el in data:
+		if number in el['Телефон']: #Ищет полное или частичное совпадение
+			count += 1
+			find_abonent.append(el)
+			print("Найденный абонент:")
+			for k, v in el.items():
+				print(f'{k}: {v}')
+			print()		
 	if count == 0:
 		print('Указанный номер не найден')
 		print()
